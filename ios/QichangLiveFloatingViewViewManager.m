@@ -1,6 +1,7 @@
 #import <React/RCTViewManager.h>
+#import "QichangLiveFloatingView.h"
 
-@interface QichangLiveFloatingViewViewManager : RCTViewManager
+@interface QichangLiveFloatingViewViewManager  : RCTViewManager
 @end
 
 @implementation QichangLiveFloatingViewViewManager
@@ -9,7 +10,7 @@ RCT_EXPORT_MODULE(QichangLiveFloatingViewView)
 
 - (UIView *)view
 {
-  return [[UIView alloc] init];
+  return [[QichangLiveFloatingView alloc] init];
 }
 
 RCT_CUSTOM_VIEW_PROPERTY(color, NSString, UIView)
