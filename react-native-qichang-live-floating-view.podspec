@@ -13,9 +13,10 @@ Pod::Spec.new do |s|
   s.platforms    = { :ios => "10.0" }
   s.source       = { :git => "https://github.com/QiChang2022/react-native-qichang-live-floating-view.git", :tag => "#{s.version}" }
 
-  
+
   s.source_files = "ios/**/*.{h,m,mm,swift}"
-  
+
+  s.resources      = "ios/*.gif"
 
   s.dependency "React-Core"
   s.dependency "Masonry"
