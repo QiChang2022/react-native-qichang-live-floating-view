@@ -7,11 +7,13 @@
 //
 
 #import "QichangLiveFloatingView.h"
+#import <Masonry/Masonry.h>
+#import <FLAnimatedImage/FLAnimatedImage.h>
+#import <React/RCTImageView.h>
 
 @interface QichangLiveFloatingView ()
 
-@property (nonatomic,strong) NSString *name;
-
+@property (nonatomic, copy)  RCTBubblingEventBlock onPress;
 
 @end
 
@@ -29,13 +31,44 @@
     self = [super initWithFrame:frame];
     if(self){
         
-        UITextView *textView = [[UITextView alloc]init];
+        NSLog(@"QichangLiveFloatingView:%@",NSStringFromCGRect(self.frame));
         
-        [textView setText:@"2222"];
+        FLAnimatedImageView *imageView = [[FLAnimatedImageView alloc]init];
         
-        [self addSubview:textView];
+        NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"image" ofType:@"gif"];
+        
+        imageView.animatedImage = [[FLAnimatedImage alloc]initWithAnimatedGIFData:[NSData dataWithContentsOfFile:imagePath]];
+        
+        [self addSubview:imageView];
+        
+        [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+           
+            make.height.width.mas_equalTo(@75);
+            make.center.mas_equalTo(self);
+            
+        }];
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onPressAction)];
+        imageView.userInteractionEnabled = YES;
+        [imageView addGestureRecognizer:tap];
+        
+        
     }
     return self;
 }
+
+-(void)onPressAction{
+    NSLog(@"QichangLiveFloatingView: onPress");
+    if(self.onPress){
+        self.onPress(NULL);
+    }
+}
+
+-(void)layoutSubviews{
+    NSLog(@"QichangLiveFloatingView:%@",NSStringFromCGRect(self.frame));
+}
+
+
+
 
 @end

@@ -18,4 +18,6 @@ Pod::Spec.new do |s|
   
 
   s.dependency "React-Core"
+  s.dependency "Masonry"
+  s.dependency "FLAnimatedImage"
 end

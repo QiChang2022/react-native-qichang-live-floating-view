@@ -6,17 +6,20 @@
 
 @implementation QichangLiveFloatingViewViewManager
 
-RCT_EXPORT_MODULE(QichangLiveFloatingViewView)
+RCT_EXPORT_MODULE(QichangLiveFloatingView)
 
 - (UIView *)view
 {
   return [[QichangLiveFloatingView alloc] init];
 }
 
+RCT_EXPORT_VIEW_PROPERTY(onPress,RCTBubblingEventBlock)
+
 RCT_CUSTOM_VIEW_PROPERTY(color, NSString, UIView)
 {
   [view setBackgroundColor:[self hexStringToColor:json]];
 }
+
 
 - hexStringToColor:(NSString *)stringToConvert
 {
@@ -31,5 +34,7 @@ RCT_CUSTOM_VIEW_PROPERTY(color, NSString, UIView)
 
   return [UIColor colorWithRed:r / 255.0f green:g / 255.0f blue:b / 255.0f alpha:1.0f];
 }
+
+
 
 @end

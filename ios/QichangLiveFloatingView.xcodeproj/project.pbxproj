@@ -28,6 +28,7 @@
 		9C3A30C825ECBE4D00626A15 /* QichangLiveFloatingViewViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QichangLiveFloatingViewViewManager.m; sourceTree = "<group>"; };
 		9C3A30D125ECBF4300626A15 /* QichangLiveFloatingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QichangLiveFloatingView.h; sourceTree = "<group>"; };
 		9C3A30D225ECBF4300626A15 /* QichangLiveFloatingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QichangLiveFloatingView.m; sourceTree = "<group>"; };
+		9CC455C725EE2BD800E391EF /* image.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = image.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +56,7 @@
 				9C3A30D125ECBF4300626A15 /* QichangLiveFloatingView.h */,
 				9C3A30D225ECBF4300626A15 /* QichangLiveFloatingView.m */,
 				9C3A30C825ECBE4D00626A15 /* QichangLiveFloatingViewViewManager.m */,
+				9CC455C725EE2BD800E391EF /* image.gif */,
 				134814211AA4EA7D00B7C361 /* Products */,
 			);
 			sourceTree = "<group>";

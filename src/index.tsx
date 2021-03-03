@@ -5,8 +5,7 @@ type QichangLiveFloatingViewProps = {
   style: ViewStyle;
 };
 
-export const QichangLiveFloatingViewViewManager = requireNativeComponent<QichangLiveFloatingViewProps>(
+export const QichangLiveFloatingView = requireNativeComponent<QichangLiveFloatingViewProps>(
   'QichangLiveFloatingViewView'
 );
-
-export default QichangLiveFloatingViewViewManager;
+export default QichangLiveFloatingView;
