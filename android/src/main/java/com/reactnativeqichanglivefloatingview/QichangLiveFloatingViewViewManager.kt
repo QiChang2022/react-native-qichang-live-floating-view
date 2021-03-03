@@ -7,7 +7,7 @@ import com.facebook.react.uimanager.ThemedReactContext
 import com.facebook.react.uimanager.annotations.ReactProp
 
 class QichangLiveFloatingViewViewManager : SimpleViewManager<View>() {
-  override fun getName() = "QichangLiveFloatingViewView"
+  override fun getName() = "QichangLiveFloatingView"
 
   override fun createViewInstance(reactContext: ThemedReactContext): View {
     return View(reactContext)
@@ -17,4 +17,6 @@ class QichangLiveFloatingViewViewManager : SimpleViewManager<View>() {
   fun setColor(view: View, color: String) {
     view.setBackgroundColor(Color.parseColor(color))
   }
+
+
 }
