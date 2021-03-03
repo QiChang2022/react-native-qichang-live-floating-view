@@ -6,7 +6,7 @@ import QichangLiveFloatingViewViewManager from 'react-native-qichang-live-floati
 export default function App() {
   return (
     <View style={styles.container}>
-      <QichangLiveFloatingViewViewManager color="#32a852" style={styles.box} />
+      <QichangLiveFloatingViewViewManager style={styles.box} />
     </View>
   );
 }

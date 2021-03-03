@@ -15,11 +15,6 @@ RCT_EXPORT_MODULE(QichangLiveFloatingView)
 
 RCT_EXPORT_VIEW_PROPERTY(onPress,RCTBubblingEventBlock)
 
-RCT_CUSTOM_VIEW_PROPERTY(color, NSString, UIView)
-{
-  [view setBackgroundColor:[self hexStringToColor:json]];
-}
-
 
 - hexStringToColor:(NSString *)stringToConvert
 {
