@@ -1,12 +1,12 @@
 import * as React from 'react';
 
 import { StyleSheet, View } from 'react-native';
-import QichangLiveFloatingViewViewManager from 'react-native-qichang-live-floating-view';
+import QichangLiveFloatingView from 'react-native-qichang-live-floating-view';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <QichangLiveFloatingViewViewManager style={styles.box} />
+      <QichangLiveFloatingView style={styles.box} onPress={() => {}} />
     </View>
   );
 }
@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   box: {
+    backgroundColor: 'red',
     width: 60,
     height: 60,
     marginVertical: 20,
