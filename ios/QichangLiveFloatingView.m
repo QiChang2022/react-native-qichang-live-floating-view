@@ -14,6 +14,9 @@
 @interface QichangLiveFloatingView ()
 
 @property (nonatomic, copy)  RCTBubblingEventBlock onPress;
+@property (nonatomic, copy)  NSString *imageUrl;
+
+@property (nonatomic,strong) FLAnimatedImageView *imageView;
 
 @end
 
@@ -39,6 +42,8 @@
         
         imageView.animatedImage = [[FLAnimatedImage alloc]initWithAnimatedGIFData:[NSData dataWithContentsOfFile:imagePath]];
         
+        self.imageView = imageView;
+        
         [self addSubview:imageView];
         
         [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -55,6 +60,15 @@
         
     }
     return self;
+}
+
+
+-(void)setImageUrl:(NSString *)imageUrl{
+    
+    if(imageUrl != self.imageUrl){
+        self.imageView.animatedImage = [[FLAnimatedImage alloc]initWithAnimatedGIFData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]]];
+    }
+    
 }
 
 -(void)onPressAction{
