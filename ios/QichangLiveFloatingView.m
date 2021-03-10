@@ -66,7 +66,21 @@
 -(void)setImageUrl:(NSString *)imageUrl{
     
     if(imageUrl != self.imageUrl){
-        self.imageView.animatedImage = [[FLAnimatedImage alloc]initWithAnimatedGIFData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]]];
+        
+//        self.imageView.animatedImage = [[FLAnimatedImage alloc]initWithAnimatedGIFData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]]];
+        
+        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+
+        dispatch_async(queue, ^{
+            
+            NSData *data =  [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.imageView.animatedImage = [[FLAnimatedImage alloc]initWithAnimatedGIFData:data];
+            });
+
+        });
+        
+
     }
     
 }

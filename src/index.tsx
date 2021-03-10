@@ -1,7 +1,7 @@
-import { requireNativeComponent, ViewStyle } from 'react-native';
+import { requireNativeComponent, ViewStyle, StyleProp } from 'react-native';
 
 type QichangLiveFloatingViewProps = {
-  style: ViewStyle;
+  style?: StyleProp<ViewStyle>;
   onPress?: () => void;
   imageUrl?: string;
 };

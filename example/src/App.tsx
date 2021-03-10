@@ -6,7 +6,13 @@ import QichangLiveFloatingView from 'react-native-qichang-live-floating-view';
 export default function App() {
   return (
     <View style={styles.container}>
-      <QichangLiveFloatingView style={styles.box} onPress={() => {}} />
+      <QichangLiveFloatingView
+        style={styles.box}
+        onPress={() => {
+          console.log('11');
+        }}
+        imageUrl="https://i.stack.imgur.com/1dpmw.gif"
+      />
     </View>
   );
 }
@@ -18,7 +24,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   box: {
-    backgroundColor: 'blue',
+    //backgroundColor: 'blue',
     width: 100,
     height: 100,
     marginVertical: 20,
